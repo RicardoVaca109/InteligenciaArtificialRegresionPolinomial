@@ -1,0 +1,35 @@
+¿Por qué el dataset permite aplicar un algoritmo de Regresión Polinómica?
+1) El archivo contiene dos variables claramente relacionadas: horas de estudio y calificación. 
+Esa relación directa permite formular un modelo donde la variable independiente (horas) explica 
+la variable dependiente (puntuación).
+
+2) Al graficar los puntos se observa una curvatura suave en la nube de datos: la ganancia de 
+calificación por hora no es constante, sino que acelera o desacelera en distintos tramos.
+
+3) Este modelo permite predecir con mayor fidelidad en rangos intermedios 
+(por ejemplo, entre 4 y 8 horas) donde la pendiente cambia de manera evidente.
+
+-Cabe recalcar que la regresión lineal (línea recta) es demasiado rígida: tiende a infraestimar 
+la calificación en algunos intervalos y a sobreestimarla en otros.
+
+-El polinomio de grado 4 ajusta la tendencia real de los datos  lo que ofrece una curva suave 
+que sigue el patrón.
+
+-El enfoque polinómico es ideal para visualizar la evolución de la calificación en función de 
+las horas de estudio y para hacer predicciones a corto plazo dentro del rango observado.
+
+*Análisis técnico de los resultados:
+-Bias vs. varianza: el modelo lineal presenta un sesgo elevado al no capturar la curvatura, 
+mientras que el polinómico reduce ese sesgo manteniendo la varianza controlada gracias al tamaño del conjunto.
+
+-Residuos: con la línea recta los errores muestran patrones sistemáticos (momentos en que todos quedan por 
+encima o por debajo), pero con el polinomio los residuos se dispersan de forma más aleatoria.
+
+*Recomendaciones prácticas
+
+-Validar ambos modelos (lineal y polinómico) usando un conjunto de prueba o mediante k-fold cross-validation 
+para comparar su desempeño fuera del entrenamiento.
+
+-Inspeccionar gráficamente los residuos y aplicar un QQ-plot para verificar la normalidad de los errores.
+
+-Probar grados de polinomio menores (grado 2 o 3) para valorar si con menor complejidad se obtiene un ajuste similar.
